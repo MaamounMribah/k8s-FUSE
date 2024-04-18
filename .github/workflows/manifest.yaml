@@ -1,0 +1,74 @@
+name: LLM Pipeline CI/CD Workflow
+
+on:
+  workflow_dispatch:
+    
+  push:
+    branches:
+      - main
+
+jobs:
+  
+  
+  # create-infra:
+  #   runs on: ubuntu latest
+  #   steps:
+  #     - name: Provision the infrastructure
+  #       id: infra
+  #       run: |
+  #         # access to the directory in which hcl files are located
+  #         cd Maamoun/GCP_terraform
+
+  #         # initialize providers
+  #         terraform init 
+
+  #         # apply changes
+  #         terraform apply -auto-approve
+  #       continue-on-error: true
+
+  #     - name: Rollback if error is raised 
+  #       if: steps.infra.outcome != 'success'
+  #       run: |
+  #         # access to the directory in which hcl files are located
+  #         cd Maamoun/GCP_terraform
+  #         terraform destroy -auto-approve
+  #         exit 1
+
+  #     - name: Commit and push changes
+  #       run: |
+  #         git config --global user.email "mribahmaamoun@gmail.com
+  #         git config --global user.name "MaamounMribah"
+  #         git pull origin main
+  #         git add terraform/*terraform*
+  #         git commit -m "Automated commit from GitHub Actions"
+  #         git push origin main
+  
+
+  
+      
+
+  kubeflow-pipeline-deployment:
+    runs-on: ubuntu-latest
+    needs: build-and-push-docker
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Install kfp
+        run: pip install kfp==1.8.22
+        
+      - name: Compile and Deploy Kubeflow Pipeline
+        run: |
+          python3 Maamoun/LLM-Pipeline-GCP/pipeline.py
+
+  
+  
+
+  
+
+
+  

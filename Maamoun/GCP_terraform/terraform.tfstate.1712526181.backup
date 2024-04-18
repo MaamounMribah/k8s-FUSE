@@ -1,0 +1,656 @@
+{
+  "version": 4,
+  "terraform_version": "1.7.4",
+  "serial": 214,
+  "lineage": "d57d3e66-63b3-e59e-e339-7a6579b992c7",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "google_client_config",
+      "name": "provider",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_token": "ya29.a0Ad52N3-wr8MI8LnRAKXtAgWyxzmOn6xmeOsL1gTUVbe-5cQVlwpICtjxgutJEFHC9KsV6yLK_nUsIZMXcu-Q9ek5wD17QA4R2obqFNa2klrMIHjk1FMu_r2lALb8yL7t-JjQYd9RCi6SdwCoA7UkfPxShhlCj4KvzoZQcAaCgYKAf8SARMSFQHGX2MiwakoeWAfiY8W3PPxFFOGxQ0173",
+            "id": "projects/\"int-infra-training-gcp\"/regions/\"europe-west3\"/zones/\"europe-west3-c\"",
+            "project": "int-infra-training-gcp",
+            "region": "europe-west3",
+            "zone": "europe-west3-c"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_artifact_registry_repository",
+      "name": "docker_repository",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "cleanup_policies": [],
+            "cleanup_policy_dry_run": false,
+            "create_time": "2024-04-07T17:02:48.279494Z",
+            "description": "Docker repository for LLM pipeline images",
+            "docker_config": [],
+            "effective_labels": {},
+            "format": "DOCKER",
+            "id": "projects/int-infra-training-gcp/locations/europe-west3/repositories/maamoun",
+            "kms_key_name": "",
+            "labels": null,
+            "location": "europe-west3",
+            "maven_config": [],
+            "mode": "STANDARD_REPOSITORY",
+            "name": "maamoun",
+            "project": "int-infra-training-gcp",
+            "remote_repository_config": [],
+            "repository_id": "maamoun",
+            "terraform_labels": {},
+            "timeouts": null,
+            "update_time": "2024-04-07T17:02:48.279494Z",
+            "virtual_repository_config": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_container_cluster",
+      "name": "my-kubernetes-cluster",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 2,
+          "attributes": {
+            "addons_config": [
+              {
+                "cloudrun_config": [],
+                "config_connector_config": [],
+                "dns_cache_config": [],
+                "gce_persistent_disk_csi_driver_config": [
+                  {
+                    "enabled": true
+                  }
+                ],
+                "gcp_filestore_csi_driver_config": [],
+                "gcs_fuse_csi_driver_config": [],
+                "gke_backup_agent_config": [],
+                "horizontal_pod_autoscaling": [],
+                "http_load_balancing": [],
+                "network_policy_config": [
+                  {
+                    "disabled": true
+                  }
+                ]
+              }
+            ],
+            "allow_net_admin": null,
+            "authenticator_groups_config": [],
+            "binary_authorization": [
+              {
+                "enabled": false,
+                "evaluation_mode": ""
+              }
+            ],
+            "cluster_autoscaling": [
+              {
+                "auto_provisioning_defaults": [],
+                "autoscaling_profile": "BALANCED",
+                "enabled": false,
+                "resource_limits": []
+              }
+            ],
+            "cluster_ipv4_cidr": "10.40.0.0/14",
+            "confidential_nodes": [],
+            "cost_management_config": [],
+            "database_encryption": [
+              {
+                "key_name": "",
+                "state": "DECRYPTED"
+              }
+            ],
+            "datapath_provider": "",
+            "default_max_pods_per_node": 110,
+            "default_snat_status": [
+              {
+                "disabled": false
+              }
+            ],
+            "deletion_protection": false,
+            "description": "",
+            "dns_config": [],
+            "enable_autopilot": false,
+            "enable_intranode_visibility": false,
+            "enable_k8s_beta_apis": [],
+            "enable_kubernetes_alpha": false,
+            "enable_l4_ilb_subsetting": false,
+            "enable_legacy_abac": false,
+            "enable_shielded_nodes": true,
+            "enable_tpu": false,
+            "endpoint": "35.198.125.5",
+            "fleet": [],
+            "gateway_api_config": [],
+            "id": "projects/int-infra-training-gcp/locations/europe-west3/clusters/my-kubernetes-cluster",
+            "identity_service_config": [],
+            "initial_node_count": 1,
+            "ip_allocation_policy": [
+              {
+                "additional_pod_ranges_config": [],
+                "cluster_ipv4_cidr_block": "10.40.0.0/14",
+                "cluster_secondary_range_name": "gke-my-kubernetes-cluster-pods-382bbc83",
+                "pod_cidr_overprovision_config": [
+                  {
+                    "disabled": false
+                  }
+                ],
+                "services_ipv4_cidr_block": "10.44.160.0/20",
+                "services_secondary_range_name": "gke-my-kubernetes-cluster-services-382bbc83",
+                "stack_type": "IPV4"
+              }
+            ],
+            "label_fingerprint": "a9dc16a7",
+            "location": "europe-west3",
+            "logging_config": [
+              {
+                "enable_components": [
+                  "SYSTEM_COMPONENTS",
+                  "WORKLOADS"
+                ]
+              }
+            ],
+            "logging_service": "logging.googleapis.com/kubernetes",
+            "maintenance_policy": [],
+            "master_auth": [
+              {
+                "client_certificate": "",
+                "client_certificate_config": [
+                  {
+                    "issue_client_certificate": false
+                  }
+                ],
+                "client_key": "",
+                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMRENDQXBTZ0F3SUJBZ0lRSVR2a3ZuMVZ3RDdPMnVtbTdEMHpTVEFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlRM1lqTXpPR1F4T0MweU9HUTBMVFEyWWpndE9HRmtOeTAyWWpZNU1qQmtOV0kzTWpjdwpJQmNOTWpRd05EQTNNVFl3TWpVd1doZ1BNakExTkRBek16RXhOekF5TlRCYU1DOHhMVEFyQmdOVkJBTVRKRGRpCk16TTRaREU0TFRJNFpEUXRORFppT0MwNFlXUTNMVFppTmpreU1HUTFZamN5TnpDQ0FhSXdEUVlKS29aSWh2Y04KQVFFQkJRQURnZ0dQQURDQ0FZb0NnZ0dCQUxuUlo3VmcyTk5PRGt5aWZDYWZzVTdHV3VKRjFqU01KNjFLUG9KRgoxUGhlREkwR253VWY0VVBMSWVYbXoyajZ4eUJmODJ0R004eFZPUXdiUjlLK00wdEl1cHFkV2tZUisvS2d0T094ClBTQXN3TWczbmJ3bE0wYWQyMTd5bFo1cVIzak5GYWZEb1dJUVkrY040aWhkbWJDN2J0a0k2RHZ0d0lnaGJ1RnIKbVpNcTlnNVBMVmhGd3RrTGNLM05LSGdUUE9CeUNia2VHMjdZcW5JNGtNQUM5MWtFekY5ZFhNWVF5QS9MV1NGVQpPcXdmbzF5c1RSTkJ0aGxmUGZ0UDVyYys3KzRSYWdWM3ZYKzZiTWg4Sno5K3NoS1pHRUNGT1loWCs5Qkk1RkRXClVWQXFsZldST2F4U2krWFB6cTRGNGE0cTlMaWhabnpwSG45NkRQVGp0R3E0RUNLWFFzS1lhM1BQTURXdVZLbG4KcTYxQ2p1bGlJZGozcnJicFMyTUplbG5jbDU4Tncyb2hTQ2VGVDdKcjRmN254bFp1ZEtpVmVtS0sweVNwT0RoSgpsdmQ3OGlNMnI0SndwZDNxWEcrVzdSb2lHajYxNmg4cTZYNzhBdlltYkhUNlVvWEswV1dCSk8xc2hjQUNYaStICitsY0UrelpKdlV4T01yZll2cERXc1hNbFB3SURBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWdRd0R3WUQKVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVUrck90aWpWWU9FcHZIejNyZE9LOWJLZG51dzh3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dHQkFFaFdaZ2pjUW9XNkVnNFhUYUtLSmNrQ0pFUDU3N0l0TnhZVXVWVDVOYW1uCkhoRnZBaFc4Vm9rVXFlTWJ6NmtoK3hxK1R1UVoyd3B4aGhIVVE4Q1VlTEN0WVkwR2pnNzZOdnJvTHordXIzQTAKRW1ZNFFoQW5ib1dXRitCSUt0MC82TVRVR256OGdoeENVUTJINnlteCtRZ3VwcnFYVVhrS2lmdDJGUDBFcDFuVQpRMHRzM3FCcnZkWktZYkhMaHg3VmdJVzFJSjl4MDFqMVIvSzhCWFFyOUt1OXJiMjdTRU5HbWJ4WFhIMVBiS01TCnNlMmJLUHdrUFdjdHZRNjZxeThwaXNPS0Z4UEFZTGIvMU1oSG9pTGlMS2w3c1M1RE1GanJZYjQrMmpKb0lqa1IKRGR6UDRBWDF6T2k4aytQYno5TTJ3RkJwTldrSFN6Y1NJbWkwZG54TEZtZmQvSkdONExacTBFQVFKTVNxUFhPeQp1QXZDUzF4anMvWDYvcDJlZnVVNk54TUZhQmg4U0pHeFF5SGpqMnR1Wlg2WnROVFRoWlNCYmZmZytlYmhWM1ZlCnJLYnVCYk1LT1JBcW9OQ0JGTi82T1JJZEh3bWMzOFg3TXVTZHlPbVpiTmVyUGhrNUQzNjZJc3NiM1BxQ0hMMVAKZVcyTUJLaDFUTjdzRy9paXdWd0dDdz09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+              }
+            ],
+            "master_authorized_networks_config": [],
+            "master_version": "1.27.8-gke.1067004",
+            "mesh_certificates": [],
+            "min_master_version": null,
+            "monitoring_config": [
+              {
+                "advanced_datapath_observability_config": [
+                  {
+                    "enable_metrics": false,
+                    "enable_relay": false,
+                    "relay_mode": "DISABLED"
+                  }
+                ],
+                "enable_components": [
+                  "SYSTEM_COMPONENTS"
+                ],
+                "managed_prometheus": [
+                  {
+                    "enabled": true
+                  }
+                ]
+              }
+            ],
+            "monitoring_service": "monitoring.googleapis.com/kubernetes",
+            "name": "my-kubernetes-cluster",
+            "network": "projects/int-infra-training-gcp/global/networks/default",
+            "network_policy": [
+              {
+                "enabled": false,
+                "provider": "PROVIDER_UNSPECIFIED"
+              }
+            ],
+            "networking_mode": "VPC_NATIVE",
+            "node_config": [],
+            "node_locations": [
+              "europe-west3-a",
+              "europe-west3-b",
+              "europe-west3-c"
+            ],
+            "node_pool": [],
+            "node_pool_auto_config": [],
+            "node_pool_defaults": [
+              {
+                "node_config_defaults": [
+                  {
+                    "logging_variant": "DEFAULT"
+                  }
+                ]
+              }
+            ],
+            "node_version": "1.27.8-gke.1067004",
+            "notification_config": [
+              {
+                "pubsub": [
+                  {
+                    "enabled": false,
+                    "filter": [],
+                    "topic": ""
+                  }
+                ]
+              }
+            ],
+            "operation": null,
+            "private_cluster_config": [
+              {
+                "enable_private_endpoint": false,
+                "enable_private_nodes": false,
+                "master_global_access_config": [
+                  {
+                    "enabled": false
+                  }
+                ],
+                "master_ipv4_cidr_block": "",
+                "peering_name": "",
+                "private_endpoint": "10.156.0.5",
+                "private_endpoint_subnetwork": "",
+                "public_endpoint": "35.198.125.5"
+              }
+            ],
+            "private_ipv6_google_access": "",
+            "project": "int-infra-training-gcp",
+            "release_channel": [
+              {
+                "channel": "REGULAR"
+              }
+            ],
+            "remove_default_node_pool": true,
+            "resource_labels": null,
+            "resource_usage_export_config": [],
+            "security_posture_config": [
+              {
+                "mode": "BASIC",
+                "vulnerability_mode": "VULNERABILITY_MODE_UNSPECIFIED"
+              }
+            ],
+            "self_link": "https://container.googleapis.com/v1/projects/int-infra-training-gcp/locations/europe-west3/clusters/my-kubernetes-cluster",
+            "service_external_ips_config": [
+              {
+                "enabled": false
+              }
+            ],
+            "services_ipv4_cidr": "10.44.160.0/20",
+            "subnetwork": "projects/int-infra-training-gcp/regions/europe-west3/subnetworks/default",
+            "timeouts": null,
+            "tpu_ipv4_cidr_block": "",
+            "vertical_pod_autoscaling": [],
+            "workload_identity_config": [
+              {
+                "workload_pool": "int-infra-training-gcp.svc.id.goog"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNDAwMDAwMDAwMDAwLCJkZWxldGUiOjI0MDAwMDAwMDAwMDAsInJlYWQiOjI0MDAwMDAwMDAwMDAsInVwZGF0ZSI6MzYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_container_node_pool",
+      "name": "preemptible_nodes",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 1,
+          "attributes": {
+            "autoscaling": [
+              {
+                "location_policy": "ANY",
+                "max_node_count": 4,
+                "min_node_count": 3,
+                "total_max_node_count": 0,
+                "total_min_node_count": 0
+              }
+            ],
+            "cluster": "my-kubernetes-cluster",
+            "id": "projects/int-infra-training-gcp/locations/europe-west3/clusters/my-kubernetes-cluster/nodePools/my-node-pool",
+            "initial_node_count": 3,
+            "instance_group_urls": [
+              "https://www.googleapis.com/compute/v1/projects/int-infra-training-gcp/zones/europe-west3-c/instanceGroupManagers/gke-my-kubernetes-cluste-my-node-pool-2bc12b52-grp",
+              "https://www.googleapis.com/compute/v1/projects/int-infra-training-gcp/zones/europe-west3-a/instanceGroupManagers/gke-my-kubernetes-cluste-my-node-pool-41e79e00-grp",
+              "https://www.googleapis.com/compute/v1/projects/int-infra-training-gcp/zones/europe-west3-b/instanceGroupManagers/gke-my-kubernetes-cluste-my-node-pool-60b41163-grp"
+            ],
+            "location": "europe-west3",
+            "managed_instance_group_urls": [
+              "https://www.googleapis.com/compute/v1/projects/int-infra-training-gcp/zones/europe-west3-c/instanceGroups/gke-my-kubernetes-cluste-my-node-pool-2bc12b52-grp",
+              "https://www.googleapis.com/compute/v1/projects/int-infra-training-gcp/zones/europe-west3-a/instanceGroups/gke-my-kubernetes-cluste-my-node-pool-41e79e00-grp",
+              "https://www.googleapis.com/compute/v1/projects/int-infra-training-gcp/zones/europe-west3-b/instanceGroups/gke-my-kubernetes-cluste-my-node-pool-60b41163-grp"
+            ],
+            "management": [
+              {
+                "auto_repair": true,
+                "auto_upgrade": true
+              }
+            ],
+            "max_pods_per_node": 110,
+            "name": "my-node-pool",
+            "name_prefix": "",
+            "network_config": [
+              {
+                "create_pod_range": false,
+                "enable_private_nodes": false,
+                "network_performance_config": [],
+                "pod_cidr_overprovision_config": [],
+                "pod_ipv4_cidr_block": "10.40.0.0/14",
+                "pod_range": "gke-my-kubernetes-cluster-pods-382bbc83"
+              }
+            ],
+            "node_config": [
+              {
+                "advanced_machine_features": [],
+                "boot_disk_kms_key": "",
+                "confidential_nodes": [],
+                "disk_size_gb": 100,
+                "disk_type": "pd-balanced",
+                "effective_taints": [],
+                "enable_confidential_storage": false,
+                "ephemeral_storage_local_ssd_config": [],
+                "fast_socket": [],
+                "gcfs_config": [],
+                "guest_accelerator": [],
+                "gvnic": [],
+                "host_maintenance_policy": [],
+                "image_type": "COS_CONTAINERD",
+                "kubelet_config": [],
+                "labels": {},
+                "linux_node_config": [],
+                "local_nvme_ssd_block_config": [],
+                "local_ssd_count": 0,
+                "logging_variant": "DEFAULT",
+                "machine_type": "e2-standard-2",
+                "metadata": {
+                  "disable-legacy-endpoints": "true"
+                },
+                "min_cpu_platform": "",
+                "node_group": "",
+                "oauth_scopes": [
+                  "https://www.googleapis.com/auth/cloud-platform"
+                ],
+                "preemptible": true,
+                "reservation_affinity": [],
+                "resource_labels": null,
+                "resource_manager_tags": null,
+                "service_account": "maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+                "shielded_instance_config": [
+                  {
+                    "enable_integrity_monitoring": true,
+                    "enable_secure_boot": false
+                  }
+                ],
+                "sole_tenant_config": [],
+                "spot": false,
+                "tags": null,
+                "taint": [],
+                "workload_metadata_config": [
+                  {
+                    "mode": "GKE_METADATA"
+                  }
+                ]
+              }
+            ],
+            "node_count": 3,
+            "node_locations": [
+              "europe-west3-a",
+              "europe-west3-b",
+              "europe-west3-c"
+            ],
+            "operation": null,
+            "placement_policy": [],
+            "project": "int-infra-training-gcp",
+            "queued_provisioning": [],
+            "timeouts": null,
+            "upgrade_settings": [
+              {
+                "blue_green_settings": [],
+                "max_surge": 1,
+                "max_unavailable": 0,
+                "strategy": "SURGE"
+              }
+            ],
+            "version": "1.27.8-gke.1067004"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInVwZGF0ZSI6MTgwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "google_container_cluster.my-kubernetes-cluster",
+            "google_service_account.sa"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_iam_member",
+      "name": "sa_artifactregistry_writer",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYVhKk1V/A=",
+            "id": "int-infra-training-gcp/roles/artifactregistry.writer/serviceAccount:maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+            "member": "serviceAccount:maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+            "project": "int-infra-training-gcp",
+            "role": "roles/artifactregistry.writer"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "google_service_account.sa"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_service_account",
+      "name": "sa",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "maamoun-mribah-sa-int",
+            "create_ignore_already_exists": null,
+            "description": "",
+            "disabled": false,
+            "display_name": "A service account that only [members] can use",
+            "email": "maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+            "id": "projects/int-infra-training-gcp/serviceAccounts/maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+            "member": "serviceAccount:maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+            "name": "projects/int-infra-training-gcp/serviceAccounts/maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+            "project": "int-infra-training-gcp",
+            "timeouts": null,
+            "unique_id": "101733392440570392268"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9fQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_service_account_iam_binding",
+      "name": "admin-account-iam",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYVhKjCf4I=",
+            "id": "projects/int-infra-training-gcp/serviceAccounts/maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com/roles/iam.serviceAccountUser",
+            "members": [
+              "user:m.mribah@instadeep.com"
+            ],
+            "role": "roles/iam.serviceAccountUser",
+            "service_account_id": "projects/int-infra-training-gcp/serviceAccounts/maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "google_service_account.sa"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_service_account_iam_binding",
+      "name": "workload_identity_user",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYVhKkvdDA=",
+            "id": "projects/int-infra-training-gcp/serviceAccounts/maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com/roles/iam.workloadIdentityUser",
+            "members": [
+              "serviceAccount:int-infra-training-gcp.svc.id.goog[default/default]"
+            ],
+            "role": "roles/iam.workloadIdentityUser",
+            "service_account_id": "projects/int-infra-training-gcp/serviceAccounts/maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "google_service_account.sa"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_storage_bucket",
+      "name": "my_bucket",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "autoclass": [],
+            "cors": [],
+            "custom_placement_config": [],
+            "default_event_based_hold": false,
+            "effective_labels": {},
+            "enable_object_retention": false,
+            "encryption": [],
+            "force_destroy": true,
+            "id": "my-bucket-int-infra-training-gcp",
+            "labels": null,
+            "lifecycle_rule": [
+              {
+                "action": [
+                  {
+                    "storage_class": "",
+                    "type": "Delete"
+                  }
+                ],
+                "condition": [
+                  {
+                    "age": 90,
+                    "created_before": "",
+                    "custom_time_before": "",
+                    "days_since_custom_time": 0,
+                    "days_since_noncurrent_time": 0,
+                    "matches_prefix": [],
+                    "matches_storage_class": [],
+                    "matches_suffix": [],
+                    "no_age": false,
+                    "noncurrent_time_before": "",
+                    "num_newer_versions": 0,
+                    "with_state": "ANY"
+                  }
+                ]
+              }
+            ],
+            "location": "EUROPE-WEST3",
+            "logging": [],
+            "name": "my-bucket-int-infra-training-gcp",
+            "project": "int-infra-training-gcp",
+            "public_access_prevention": "inherited",
+            "requester_pays": false,
+            "retention_policy": [],
+            "rpo": null,
+            "self_link": "https://www.googleapis.com/storage/v1/b/my-bucket-int-infra-training-gcp",
+            "storage_class": "STANDARD",
+            "terraform_labels": {},
+            "timeouts": null,
+            "uniform_bucket_level_access": true,
+            "url": "gs://my-bucket-int-infra-training-gcp",
+            "versioning": [],
+            "website": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsInJlYWQiOjI0MDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_storage_bucket_iam_member",
+      "name": "bucket_member",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bucket": "b/my-bucket-int-infra-training-gcp",
+            "condition": [],
+            "etag": "CAI=",
+            "id": "b/my-bucket-int-infra-training-gcp/roles/storage.objectAdmin/serviceAccount:maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+            "member": "serviceAccount:maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com",
+            "role": "roles/storage.objectAdmin"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "google_service_account.sa",
+            "google_storage_bucket.my_bucket"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "annotate_default_ksa",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 0,
+          "attributes": {
+            "id": "5242993184282785322",
+            "triggers": {
+              "sa_email": "maamoun-mribah-sa-int@int-infra-training-gcp.iam.gserviceaccount.com"
+            }
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "google_container_cluster.my-kubernetes-cluster",
+            "google_service_account.sa"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

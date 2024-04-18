@@ -1,0 +1,14 @@
+Maamoun/GCP_terraform/.terraform/
+Maamoun/GCP_terraform/.terraform.lock.hcl
+Maamoun/GCP_terraform/terraform.tfstate
+Maamoun/GCP_terraform/terraform.tfstate.backup
+Maamoun/GCP_terraform/.terraform.tfstate.lock.info
+Maamoun/LLM-Pipeline-GCP/bart-finetuned/
+Maamoun/LLM-Pipeline-GCP/.env
+Maamoun/LLM-Pipeline-GCP/service_account.json
+Maamoun/GCP_terraform/~/.kube
+
+Maamoun/webApp/saved_model
+Maamoun/webApp/__pycache__
+Maamoun/webApp/int-infra-training-gcp-b4ede48008c9.json
+Maamoun/webApp/saved_model

@@ -1,0 +1,55 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: bert-fine-tuning-pipeline-
+  annotations: {pipelines.kubeflow.org/kfp_sdk_version: 1.8.22, pipelines.kubeflow.org/pipeline_compilation_time: '2024-04-08T23:26:25.862254',
+    pipelines.kubeflow.org/pipeline_spec: '{"description": "A pipeline that fine-tunes
+      bert model with sprecific data.", "name": "bert Fine-Tuning Pipeline"}'}
+  labels: {pipelines.kubeflow.org/kfp_sdk_version: 1.8.22}
+spec:
+  entrypoint: bert-fine-tuning-pipeline
+  templates:
+  - name: bert-fine-tuning-pipeline
+    dag:
+      tasks:
+      - name: fine-tuned-model-evaluation
+        template: fine-tuned-model-evaluation
+        dependencies: [output-after-fine-tuning]
+      - {name: fine-tuning-model, template: fine-tuning-model}
+      - name: output-after-fine-tuning
+        template: output-after-fine-tuning
+        dependencies: [fine-tuning-model]
+  - name: fine-tuned-model-evaluation
+    container:
+      command: [python3, /app/evaluate_fine_tuned_model/evaluate_fine_tuned_model.py]
+      image: europe-west3-docker.pkg.dev/int-infra-training-gcp/maamoun/llm_pipeline:latest
+    metadata:
+      labels:
+        pipelines.kubeflow.org/kfp_sdk_version: 1.8.22
+        pipelines.kubeflow.org/pipeline-sdk-type: kfp
+        pipelines.kubeflow.org/enable_caching: "true"
+  - name: fine-tuning-model
+    container:
+      command: [python3, /app/Fine-tune-model/fine-tune-model.py]
+      image: europe-west3-docker.pkg.dev/int-infra-training-gcp/maamoun/llm_pipeline:latest
+      resources:
+        limits: {cpu: '2', memory: 2Gi}
+        requests: {cpu: '1', memory: 1Gi}
+    metadata:
+      labels:
+        pipelines.kubeflow.org/kfp_sdk_version: 1.8.22
+        pipelines.kubeflow.org/pipeline-sdk-type: kfp
+        pipelines.kubeflow.org/enable_caching: "true"
+      annotations: {pipelines.kubeflow.org/max_cache_staleness: P0D}
+  - name: output-after-fine-tuning
+    container:
+      command: [python3, /app/Fine_tuned_model_output/fine_tuned_model_output.py]
+      image: europe-west3-docker.pkg.dev/int-infra-training-gcp/maamoun/llm_pipeline:latest
+    metadata:
+      labels:
+        pipelines.kubeflow.org/kfp_sdk_version: 1.8.22
+        pipelines.kubeflow.org/pipeline-sdk-type: kfp
+        pipelines.kubeflow.org/enable_caching: "true"
+  arguments:
+    parameters: []
+  serviceAccountName: pipeline-runner
