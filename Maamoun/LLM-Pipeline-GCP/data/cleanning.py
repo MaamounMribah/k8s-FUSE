@@ -18,15 +18,16 @@ def clean_text(text):
 storage_client = storage.Client()
 bucket_name = 'my-bucket-int-infra-training-gcp'
 file_name = 'combined_devops_data.csv'
-local_file_name = 'combined_devops_data.csv'
+
 
 # Reference the specified bucket and file (blob)
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(file_name)
 
 # Download the file locally
-blob.download_to_filename(local_file_name)
-
+#local_file_name = 'combined_devops_data.csv'
+#blob.download_to_filename(local_file_name)
+local_file_name='/mnt/gcs/combined_devops_data.csv'
 
 # Load the dataset
 df = pd.read_csv(local_file_name)

@@ -95,8 +95,8 @@ def llm_pipeline():
     generate_output_after_fine_tuning_task=bert_fine_tuned_model_output_op()after(generate_output_task).set_cpu_request('512Mi').set_cpu_limit('1').set_memory_request('512Mi').set_memory_limit('1Gi')
     evaluate_fine_tuned_model_task=evaluate_fine_tuned_model_op().after(generate_output_after_fine_tuning_task).set_cpu_request('512Mi').set_cpu_limit('1').set_memory_request('512Mi').set_memory_limit('1Gi')
     """
-    combine_data_task=combine_data_op().after(collect_data_task)
-    combine_data_task.execution_options.caching_strategy.max_cache_staleness = "P0D"
+    cleanning_data_task=cleanning_data_op()
+    cleanning_data_task.execution_options.caching_strategy.max_cache_staleness = "P0D"
     
     """
     collect_data_task=collect_data_op()
